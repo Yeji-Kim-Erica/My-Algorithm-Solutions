@@ -29,11 +29,7 @@ public class Main {
         System.out.println(median);
         
         // 3. 최빈값
-        
-        // 최대 빈도수
-        List<Integer> frequencyArr = new ArrayList<>(frequencyOfNumbers.values());
-        Collections.sort(frequencyArr);
-        int maxFrequency = frequencyArr.get(frequencyArr.size()-1);
+        int maxFrequency = Collections.max(frequencyOfNumbers.values()).intValue();
         
         List<Integer> modes = new ArrayList<>();
         for (Entry<Integer, Integer> entry : frequencyOfNumbers.entrySet()) {
@@ -41,6 +37,7 @@ public class Main {
 				modes.add(entry.getKey());
 			}
 		}
+        
         if (modes.size() > 1) {
         	Collections.sort(modes);
         	System.out.println(modes.get(1));
