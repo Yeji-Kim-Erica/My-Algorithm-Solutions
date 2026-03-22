@@ -1,8 +1,12 @@
 class Solution {
     public int solution(int num, int k) {
-        
-    	int answer = (num+"").indexOf(k+"");
-    	
-    	return answer == -1 ? answer : answer + 1;
+        String answer = num + "";
+        String lookingFor = k + "";
+        for (int i = 0; i < answer.length(); i++) {
+            if ((answer.charAt(i) + "").equals(lookingFor)) {
+                return i + 1;
+            }
+        }
+        return -1;
     }
 }
